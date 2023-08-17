@@ -167,25 +167,29 @@ fn generate_html(
     in_list_item: bool,
     list_item_prefix: &str,
 ) -> String {
-    // TODO: Implement HTML generation logic
-    // For example, you could simply wrap the parsed line in a paragraph tag
-    // Here's an example implementation that wraps the parsed line in a paragraph tag:
+    let mut html_output = String::new();
+
     if in_code_block {
-        format!("{}\n", parsed_line)
+        html_output.push_str(&format!("{}\n", parsed_line));
     } else if in_blockquote {
         if parsed_line == "" {
-            "</blockquote>\n".to_string()
+            html_output.push_str("</blockquote>\n");
         } else {
-            format!("{}\n", parsed_line)
+            html_output.push_str(&format!("{}\n", parsed_line));
         }
     } else if in_list {
         if in_list_item {
-            format!("{}{}\n", list_item_prefix, parsed_line)
+            html_output.push_str(&format!("{}{}\n", list_item_prefix, parsed_line));
         } else {
-            let new_prefix = format!("{}<li>", list_item_prefix);
-            format!("{}{}\n", new_prefix, parsed_line)
+            html_output.push_str(&format!("</ul>\n<li>{}</li>\n", parsed_line));
         }
     } else {
-        format!("{}\n", parsed_line)
+        html_output.push_str(&format!("<p>{}</p>\n", parsed_line));
     }
+
+    if !in_list_item && !in_code_block && !in_blockquote && in_list {
+        html_output.push_str("</ul>\n");
+    }
+
+    html_output
 }

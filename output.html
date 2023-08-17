@@ -1,35 +1,43 @@
-<p><h1>My Markdown Example</h1></p>
-<p></p>
-<p><h2>Text Formatting</h2></p>
-<p></p>
-<p>This is a *paragraph* with some <b>bold</b> and <i>italic</i> text. You can also use <s>strikethrough</s> text.</p>
-<p></p>
-<p><h2>Lists</h2></p>
-<p></p>
-<p><h3>Unordered List</h3></p>
-<p></p>
-<li><ul><li>Item 1</li>
-<li>Item 2</li>
-<li>Subitem A</li>
-<li>Subitem B</li>
-<p></p>
-<p><h3>Ordered List</h3></p>
-<p></p>
-<li><ol><li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
-<p></p>
-<p><h2>Links and Images</h2></p>
-<p></p>
+<h1>My Markdown Example</h1>
+
+<h2>Text Formatting</h2>
+
+<p>This is a <em>paragraph</em> with some <strong>bold</strong> and <em>italic</em> text. You can also use <del>strikethrough</del> text.</p>
+
+<h2>Lists</h2>
+
+<h3>Unordered List</h3>
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2
+    <ul>
+      <li>Subitem A</li>
+      <li>Subitem B</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Ordered List</h3>
+
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ol>
+
+<h2>Links and Images</h2>
+
 <p>Visit the <a href="https://www.openai.com/">OpenAI website</a> for more information.</p>
-<p></p>
-<p>!<a href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/128px-Markdown-mark.svg.png">Markdown Logo</a></p>
-<p></p>
-<p><h2>Code</h2></p>
-<p></p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/128px-Markdown-mark.svg.png" alt="Markdown Logo"></p>
+
+<h2>Code</h2>
+
 <p>Inline code: <code>print("Hello, world!")</code></p>
-<p></p>
+
 <pre><code>
 fn main() {
     println!("Hello from Rust!");
 }
+</code></pre>
