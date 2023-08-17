@@ -1,4 +1,5 @@
 /target
 /build/
 
-*.html
+output.html
+input.md
